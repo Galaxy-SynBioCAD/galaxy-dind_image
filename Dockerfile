@@ -1,4 +1,4 @@
-FROM brsynth/galaxy
+FROM brsynth/galaxy:py27
 
 # Install Docker
 RUN apt-get update \
