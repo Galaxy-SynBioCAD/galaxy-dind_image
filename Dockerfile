@@ -20,7 +20,6 @@ COPY entrypoint.sh /
 COPY resolv.conf /
 
 RUN chmod u+x /entrypoint.sh \
- && gpasswd -a galaxy docker \
- && cat /resolv.conf >> /etc/resolv.conf
+ && gpasswd -a galaxy docker
 
 ENTRYPOINT ["/entrypoint.sh"]
