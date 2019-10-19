@@ -6,8 +6,8 @@ rm -f /var/run/docker.pid
 cat /resolv.conf >> /etc/resolv.conf
 echo "`ping -c1 db | sed -nE 's/^PING[^(]+\(([^)]+)\).*/\1/p'` db" >> /etc/hosts
 
-systemctl start docker
-systemctl enable docker
+service start docker
+update-rc.d docker enable
 
 
 runuser -l galaxy -c 'cd /galaxy ; sh run.sh'
