@@ -6,7 +6,7 @@ rm -f /var/run/docker.pid
 cat /resolv.conf >> /etc/resolv.conf
 echo "`ping -c1 db | sed -nE 's/^PING[^(]+\(([^)]+)\).*/\1/p'` db" >> /etc/hosts
 
-service start docker
+service docker start
 update-rc.d docker enable
 
 
